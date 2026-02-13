@@ -83,7 +83,7 @@ region_ids = [1, 4, 8]  # 同时抢购华北、华东、华南
 1.打开F12
 2.点击network
 3.随便点击一个check-available的数据包
-4.查看请求头，找到`x-csrf-token`对应的值 （注意这个操作一定要是获取cookies时打开的浏览器中操作）
+4.查看请求头，找到`x-csrf-token`对应的值 （**注意这个操作一定要是获取cookies时打开的浏览器中操作**）
 
 ## ⚠️ 注意事项
 1. 请确保 `cookies.json` 文件存在且有效
