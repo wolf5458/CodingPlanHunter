@@ -48,7 +48,7 @@ python get_cookies.py
 **第二步：配置秒杀参数**
 编辑 `snap_up_server.py`：
 - 修改 `SECKILL_TIME_STR` 为目标秒杀时间
-- 确认 `activity_id` 和 `act_id` 等参数正确
+- 确认 `activity_id` 和 `act_id` 等参数正确（代码中已经配置好，只能使用此id）
 
 **第三步：运行秒杀**
 ```bash
