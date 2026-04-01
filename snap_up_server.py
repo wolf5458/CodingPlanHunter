@@ -32,7 +32,7 @@ check_data = {  # 重命名为check_data，区分抢购参数
 }
 
 headers = {
-    "x-csrf-token": str(1198041951),  # 需从浏览器实时获取
+    "x-csrf-token": str(555181231),  # 需从浏览器实时获取
     "Content-Type": "application/json",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
     "referer": "https://cloud.tencent.com/act/pro/double12-2025?fromSource=gwzcw.10216579.10216579.10216579&utm_medium=cpc&utm_id=gwzcw.10216579.10216579.10216579&msclkid=9d471e943d2d142808a4771f328779e6"
