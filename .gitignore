@@ -1,0 +1,6 @@
+config.json
+cookies.json
+*.local
+.env
+secrets/
+credentials.json
