@@ -20,22 +20,23 @@ with open("cookies.json", "r", encoding="utf-8") as f:
         )
 
 
-check_data = {  # 重命名为check_data，区分抢购参数
-  "activity_id": 160211360235666,
-  "goods": [
-    {
-      "act_id": 1708396831827542,
-      "region_id": [1, 4, 8, 9, 5]
-    }
-  ],
-  "preview": 0
+check_data = {
+    "activity_id": 162634773874417,
+    "goods": [
+        {
+            "act_id": 1786713375958762,
+            "region_id": [1,4,8]
+        }
+    ],
+    "preview": 0
 }
 
+
 headers = {
-    "x-csrf-token": str(555181231),  # 需从浏览器实时获取
+    "x-csrf-token": str(1484754848),  # 需从浏览器实时获取
     "Content-Type": "application/json",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
-    "referer": "https://cloud.tencent.com/act/pro/double12-2025?fromSource=gwzcw.10216579.10216579.10216579&utm_medium=cpc&utm_id=gwzcw.10216579.10216579.10216579&msclkid=9d471e943d2d142808a4771f328779e6"
+    "referer": "https://cloud.tencent.com/act/pro/featured-202604?fromSource=gwzcw.10216579.10216579.10216579&utm_medium=cpc&utm_id=gwzcw.10216579.10216579.10216579&msclkid=6b370ba9f89c1d21e93a6225d46c8044&page=spring2026&s_source=https%3A%2F%2Fcloud.tencent.com%2Fact%2Fpro%2Fdouble12-2025"
 }
 
 # =================== 检查是否可抢购 =================== #
@@ -75,8 +76,6 @@ def check_available():
         1: "华北",
         4: "华东",
         8: "华南",
-        9: "西南",
-        5: "华中"
     }
     for region_id, region_name in region_map.items():
         # 逐层get，避免字段缺失报错
@@ -113,12 +112,12 @@ def buy_now(region_id):
     :param region_id: 有货的地域ID
     """
     do_data = {
-        "activity_id": 160211360235666,
+        "activity_id": 162634773874417,
         "agent_channel": {
             "fromChannel": "",
             "fromSales": "",
             "isAgentClient": False,
-            "fromUrl": "https://cloud.tencent.com/act/pro/double12-2025?fromSource=gwzcw.10216579.10216579.10216579&utm_medium=cpc&utm_id=gwzcw.10216579.10216579.10216579&msclkid=6b370ba9f89c1d21e93a6225d46c8044"
+            "fromUrl": "https://cloud.tencent.com/act/pro/featured-202604?fromSource=gwzcw.10216579.10216579.10216579&utm_medium=cpc&utm_id=gwzcw.10216579.10216579.10216579&msclkid=6b370ba9f89c1d21e93a6225d46c8044&page=spring2026&s_source=https%3A%2F%2Fcloud.tencent.com%2Fact%2Fpro%2Fdouble12-2025"
         },
         
         "business": {
@@ -127,7 +126,7 @@ def buy_now(region_id):
         },
         "goods": [
             {
-                "act_id": 1708377912396209,
+                "act_id": 1786713375958762,
                 "type": "bundle_budget_mc_lg4_01",
                 "goods_param": {
                     "BlueprintId": "LINUX_UNIX",
@@ -195,9 +194,10 @@ def buy_now_concurrent(region_ids):
 # =================== 主程序 =================== #
 if __name__ == "__main__":
     print("🚀 启动腾讯云抢购脚本...")
-    SECKILL_TIME_STR = "2026-02-12 15:00:00"
+    SECKILL_TIME_STR = "2026-02-12 15:00:00" # 秒杀开始时间（北京时间）可以更改为10:00:00
     SECKILL_TIMESTAMP = int(time.mktime(time.strptime(SECKILL_TIME_STR, "%Y-%m-%d %H:%M:%S"))) * 1000
     region_ids = [1, 4, 8]
+    
     
     while True:
         current_time = get_server_time()
@@ -207,5 +207,3 @@ if __name__ == "__main__":
             break
         else:
             print(f"⏳ 当前时间未到达秒杀时间，当前服务器时间: {current_time}, 秒杀时间: {SECKILL_TIMESTAMP}")
-    
-    
