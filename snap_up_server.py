@@ -24,7 +24,7 @@ check_data = {
     "activity_id": 162634773874417,
     "goods": [
         {
-            "act_id": 1786713375958762,
+            "act_id": 1784747698901873,
             "region_id": [1,4,8]
         }
     ],
@@ -194,7 +194,7 @@ def buy_now_concurrent(region_ids):
 # =================== 主程序 =================== #
 if __name__ == "__main__":
     print("🚀 启动腾讯云抢购脚本...")
-    SECKILL_TIME_STR = "2026-02-12 15:00:00" # 秒杀开始时间（北京时间）可以更改为10:00:00
+    SECKILL_TIME_STR = "2026-02-12 15:00:00" # 秒杀开始时间（北京时间）可以更改为10:00:00,此处需要更改为实际的秒杀时间
     SECKILL_TIMESTAMP = int(time.mktime(time.strptime(SECKILL_TIME_STR, "%Y-%m-%d %H:%M:%S"))) * 1000
     region_ids = [1, 4, 8]
     
