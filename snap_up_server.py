@@ -126,7 +126,7 @@ def buy_now(region_id):
         },
         "goods": [
             {
-                "act_id": 1786713375958762,
+                "act_id": 1784747698901873,
                 "type": "bundle_budget_mc_lg4_01",
                 "goods_param": {
                     "BlueprintId": "LINUX_UNIX",
