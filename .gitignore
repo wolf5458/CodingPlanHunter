@@ -3,4 +3,5 @@ cookies.json
 *.local
 .env
 secrets/
-credentials.json
+credentials.json# Claude Code local settings
+.claude/settings.local.json
